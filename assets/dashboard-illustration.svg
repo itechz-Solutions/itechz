@@ -1,0 +1,42 @@
+<svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Illustration of a network monitoring dashboard showing uptime status and connected devices</title>
+
+<rect x="0" y="0" width="600" height="420" rx="20" fill="#0e121b"/>
+
+<rect x="60" y="60" width="480" height="300" rx="14" fill="#16181d"/>
+<rect x="60" y="60" width="480" height="44" rx="14" fill="#1d2024"/>
+<circle cx="86" cy="82" r="6" fill="#ec6a5e"/>
+<circle cx="106" cy="82" r="6" fill="#f4bf4f"/>
+<circle cx="126" cy="82" r="6" fill="#61c454"/>
+
+<g transform="translate(90,128)">
+  <rect x="0" y="0" width="130" height="80" rx="8" fill="#22262e"/>
+  <text x="14" y="24" fill="#9aa0a6" font-size="12" font-family="Manrope, sans-serif">Uptime</text>
+  <text x="14" y="56" fill="#7ee7c4" font-size="26" font-family="Space Grotesk, sans-serif" font-weight="700">99.9%</text>
+
+  <rect x="150" y="0" width="130" height="80" rx="8" fill="#22262e"/>
+  <text x="164" y="24" fill="#9aa0a6" font-size="12" font-family="Manrope, sans-serif">Devices online</text>
+  <text x="164" y="56" fill="#7ee7c4" font-size="26" font-family="Space Grotesk, sans-serif" font-weight="700">142</text>
+
+  <rect x="300" y="0" width="130" height="80" rx="8" fill="#22262e"/>
+  <text x="314" y="24" fill="#9aa0a6" font-size="12" font-family="Manrope, sans-serif">Tickets open</text>
+  <text x="314" y="56" fill="#f4bf4f" font-size="26" font-family="Space Grotesk, sans-serif" font-weight="700">3</text>
+</g>
+
+<g transform="translate(90,232)">
+  <rect x="0" y="0" width="420" height="100" rx="8" fill="#22262e"/>
+  <polyline points="20,70 70,55 120,60 170,35 220,42 270,22 320,30 370,15 400,20"
+    fill="none" stroke="#1f6f5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="20,70 70,55 120,60 170,35 220,42 270,22 320,30 370,15 400,20 400,90 20,90"
+    fill="#1f6f5c" opacity="0.12" stroke="none"/>
+</g>
+
+<g fill="#5fb8a3">
+  <circle cx="500" cy="148" r="4"/>
+  <circle cx="500" cy="168" r="4"/>
+  <circle cx="500" cy="188" r="4"/>
+</g>
+
+<circle cx="80" cy="380" r="5" fill="#1f6f5c" opacity="0.4"/>
+<circle cx="555" cy="50" r="4" fill="#1f6f5c" opacity="0.4"/>
+</svg>
