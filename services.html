@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Services — iTechz Solutions</title>
+<meta name="description" content="IT Support & Hardware, IT Infrastructure & Networking, CCTV & Surveillance, Website Development and Annual Maintenance Contracts for businesses."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.page-hero {
+  padding-top: 72px; position: relative; overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0;
+}
+.page-hero::before {
+  content: ''; position: absolute; top: -200px; right: -150px;
+  width: 500px; height: 500px; border-radius: 50%; filter: blur(70px);
+  background: radial-gradient(circle, rgba(59,130,246,.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-hero::after {
+  content: ''; position: absolute; top: -100px; left: 10%;
+  width: 360px; height: 360px; border-radius: 50%; filter: blur(70px);
+  background: radial-gradient(circle, rgba(139,92,246,.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-hero-inner { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 4.5rem 2rem 3.2rem; }
+.page-hero h1 { font-size: clamp(2.1rem,4vw,3.1rem); color: var(--text); font-weight: 700; letter-spacing: -.02em; margin-bottom: .8rem; }
+.page-hero p { font-size: 1.02rem; color: var(--text2); max-width: 560px; line-height: 1.8; }
+.breadcrumb { display: flex; align-items: center; gap: .5rem; font-size: .78rem; color: var(--text3); margin-bottom: 1.3rem; }
+.breadcrumb a { color: var(--text2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--cyan); }
+.breadcrumb span { color: var(--text3); }
+
+/* SERVICE NAV TABS */
+.svc-tabs-wrap { background: rgba(10,12,18,.6); backdrop-filter: blur(10px); border-top: 1px solid var(--line); position: sticky; top: 72px; z-index: 50; }
+.svc-tabs {
+  max-width: 1240px; margin: 0 auto; padding: 0 2rem;
+  display: flex; gap: 0; overflow-x: auto; scrollbar-width: none;
+}
+.svc-tabs::-webkit-scrollbar { display: none; }
+.svc-tab {
+  padding: 1.05rem 1.4rem; font-size: .82rem; font-weight: 600;
+  color: var(--text2); white-space: nowrap; cursor: pointer;
+  border-bottom: 2px solid transparent; transition: color .25s, border-color .25s;
+  text-decoration: none; display: block;
+}
+.svc-tab:hover { color: var(--text); }
+.svc-tab.active { color: var(--cyan); border-color: var(--cyan); }
+
+/* SERVICE DETAIL BLOCK */
+.svc-block { padding: 100px 2rem; border-bottom: 1px solid var(--line); position: relative; }
+.svc-block:nth-child(even) { background: var(--bg2); }
+.svc-block-inner {
+  max-width: 1240px; margin: 0 auto; position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.svc-block:nth-child(even) .svc-block-inner { direction: rtl; }
+.svc-block:nth-child(even) .svc-block-inner > * { direction: ltr; }
+@media(max-width:860px){
+  .svc-block-inner { grid-template-columns: 1fr; direction: ltr !important; }
+  .svc-block { padding: 64px 1.5rem; }
+}
+.svc-block-img {
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-md); aspect-ratio: 4/3; background: var(--bg3);
+  border: 1px solid var(--line);
+  transition: transform .4s;
+}
+.svc-block-img:hover { transform: translateY(-4px); }
+.svc-block-img img { width: 100%; height: 100%; object-fit: cover; }
+.svc-block-title { font-size: clamp(1.7rem,2.5vw,2.3rem); font-weight: 700; color: var(--text); margin-bottom: .9rem; letter-spacing: -.02em; }
+.svc-block-desc { font-size: .96rem; color: var(--text2); line-height: 1.85; margin-bottom: 1.9rem; }
+
+.bullets { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 2.1rem; }
+.bullet { display: flex; align-items: flex-start; gap: .8rem; }
+.bullet-check {
+  width: 21px; height: 21px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(59,130,246,.2), rgba(139,92,246,.2));
+  border: 1px solid rgba(59,130,246,.3);
+  display: grid; place-items: center; flex-shrink: 0; margin-top: .1rem;
+}
+.bullet-check svg { width: 11px; height: 11px; stroke: var(--cyan); fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.bullet-text { font-size: .88rem; color: var(--text2); line-height: 1.55; }
+
+.brand-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.9rem; }
+.brand-tag {
+  font-size: .72rem; font-weight: 600; padding: .3rem .8rem;
+  border: 1px solid var(--line-strong); border-radius: 6px;
+  color: var(--text2); background: rgba(255,255,255,.02);
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,.7)">Services</span>
+    </div>
+    <h1>Our IT Services</h1>
+    <p>Complete IT infrastructure and technology solutions for businesses — support, networking, surveillance, web and ongoing maintenance.</p>
+  </div>
+  <div class="svc-tabs-wrap">
+    <div class="svc-tabs">
+      <a class="svc-tab active" href="#it-support">IT Support & Hardware</a>
+      <a class="svc-tab" href="#infrastructure">Infrastructure & Networking</a>
+      <a class="svc-tab" href="#cctv">CCTV & Surveillance</a>
+      <a class="svc-tab" href="#web">Website Development</a>
+      <a class="svc-tab" href="#amc">AMC</a>
+    </div>
+  </div>
+</div>
+
+<!-- IT SUPPORT & HARDWARE -->
+<div class="svc-block" id="it-support">
+  <div class="svc-block-inner">
+    <div class="svc-block-img reveal">
+      <img src="laptop Repair.png" alt="IT support and hardware solutions"/>
+    </div>
+    <div class="svc-block-content reveal">
+      <span class="eyebrow">Service 01</span>
+      <h2 class="svc-block-title">IT Support & Hardware Solutions</h2>
+      <p class="svc-block-desc">Complete hardware, software and operating system support for businesses and individuals.</p>
+      <div class="bullets">
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Laptop Support</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Desktop Support</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Hardware Repair</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">SSD & RAM Upgrade</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Windows Installation</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Linux Installation</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Microsoft Office Setup</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Data Backup & Recovery</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Performance Optimization</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Remote Technical Support</span></div>
+      </div>
+      <a class="btn-primary" href="contact.html">Request IT Support</a>
+    </div>
+  </div>
+</div>
+
+<!-- IT INFRASTRUCTURE & NETWORKING -->
+<div class="svc-block" id="infrastructure">
+  <div class="svc-block-inner">
+    <div class="svc-block-img reveal">
+      <img src="networking.png" alt="IT infrastructure and networking"/>
+    </div>
+    <div class="svc-block-content reveal">
+      <span class="eyebrow">Service 02</span>
+      <h2 class="svc-block-title">IT Infrastructure & Networking</h2>
+      <p class="svc-block-desc">Enterprise networking and office infrastructure built for reliable, secure business operations.</p>
+      <div class="bullets">
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Office Network Design</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Structured Cabling</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Firewall Configuration</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">VPN Configuration</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">VLAN Setup</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Managed Switch Configuration</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Enterprise WiFi Deployment</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Rack Installation</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Server Connectivity</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">IT Infrastructure Planning</span></div>
+      </div>
+      <a class="btn-primary" href="contact.html">Request Infrastructure Consultation</a>
+    </div>
+  </div>
+</div>
+
+<!-- CCTV & SURVEILLANCE -->
+<div class="svc-block" id="cctv">
+  <div class="svc-block-inner">
+    <div class="svc-block-img reveal">
+      <img src="cctv.png" alt="CCTV and surveillance solutions"/>
+    </div>
+    <div class="svc-block-content reveal">
+      <span class="eyebrow">Service 03</span>
+      <h2 class="svc-block-title">CCTV & Surveillance Solutions</h2>
+      <p class="svc-block-desc">Complete camera and surveillance setup for offices, warehouses and commercial premises.</p>
+      <div class="bullets">
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">CCTV Installation</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">IP Camera Setup</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">DVR/NVR Configuration</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Remote Monitoring</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Maintenance</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Annual Maintenance Contracts</span></div>
+      </div>
+      <a class="btn-primary" href="contact.html">Request CCTV Consultation</a>
+    </div>
+  </div>
+</div>
+
+<!-- WEBSITE DEVELOPMENT -->
+<div class="svc-block" id="web">
+  <div class="svc-block-inner">
+    <div class="svc-block-img reveal">
+      <img src="software.png" alt="Website development and management"/>
+    </div>
+    <div class="svc-block-content reveal">
+      <span class="eyebrow">Service 04</span>
+      <h2 class="svc-block-title">Website Development & Management</h2>
+      <p class="svc-block-desc">A professional online presence for businesses that want to be taken seriously.</p>
+      <div class="bullets">
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Business Website Development</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Corporate Website Design</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Website Redesign</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Website Maintenance</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Domain & Hosting</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Business Email Setup</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">SSL Installation</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Performance Optimization</span></div>
+      </div>
+      <a class="btn-primary" href="contact.html">Request a Website Quote</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="svc-block" id="amc">
+  <div class="svc-block-inner">
+    <div class="svc-block-img reveal">
+      <img src="Desktop Repair.png" alt="Annual maintenance contracts"/>
+    </div>
+    <div class="svc-block-content reveal">
+      <span class="eyebrow">Service 05</span>
+      <h2 class="svc-block-title">Annual Maintenance Contracts</h2>
+      <p class="svc-block-desc">Ongoing IT, network and CCTV support so your business systems stay reliable year-round.</p>
+      <div class="bullets">
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">IT AMC</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Network AMC</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">CCTV AMC</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Preventive Maintenance</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">On-site Support</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Remote Support</span></div>
+        <div class="bullet"><div class="bullet-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="bullet-text">Dedicated Technical Support</span></div>
+      </div>
+      <a class="btn-primary" href="contact.html">Discuss an AMC Plan</a>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+initPage('services');
+// Active tab on scroll
+const tabs = document.querySelectorAll('.svc-tab');
+const sections = ['it-support','infrastructure','cctv','web','amc'];
+window.addEventListener('scroll', () => {
+  let current = sections[0];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 200) current = id;
+  });
+  tabs.forEach(t => {
+    t.classList.toggle('active', t.getAttribute('href') === '#'+current);
+  });
+});
+</script>
+</body>
+</html>
